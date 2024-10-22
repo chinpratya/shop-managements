@@ -1,4 +1,4 @@
-import { Card, Col, Row } from "antd";
+import { Card } from "antd";
 import { useState } from "react";
 import BarcodeScannerComponent from "react-qr-barcode-scanner";
 
@@ -9,7 +9,7 @@ const Scan = () => {
   console.log("order", order);
 
   const covertData = () => {
-    const countOccurrences = order.reduce((acc, item) => {
+    const countOccurrences = order.reduce((acc: any, item: any) => {
       acc[item] = (acc[item] || 0) + 1;
       return acc;
     }, {});
@@ -44,7 +44,7 @@ const Scan = () => {
         />
       </Card>
       {order.length > 0 ? (
-        covertData().map((v) => {
+        covertData().map((v: any) => {
           return (
             <p>
               {v.code}:{v.count}
