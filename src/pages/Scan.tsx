@@ -32,7 +32,7 @@ const Scan = () => {
     <>
       <Card>
         <BarcodeScannerComponent
-          width={500}
+          width={300}
           height={500}
           onUpdate={(err, result: any) => {
             if (result?.text) {
